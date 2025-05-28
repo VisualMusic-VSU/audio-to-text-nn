@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-6#d21q^3^(f10xf_j5e4-2mqt$*-emzqh^39)f2o+3s+=-q7k-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'nn.audio-to-text.visual-music.ru',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
