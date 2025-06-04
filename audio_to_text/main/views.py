@@ -5,10 +5,27 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
 from faster_whisper import WhisperModel
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+
 
 class TranscribeAudio(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
+    @swagger_auto_schema(
+        request_body=None,
+        manual_parameters=[
+            openapi.Parameter('file', openapi.IN_FORM, description='Аудиофайл для расшировки', type=openapi.TYPE_FILE),
+        ],
+        responses={
+            200: openapi.Response(
+                description="Расшифровка прошла успешно",
+            ),
+            400: openapi.Response(
+                description="Ошибки в запросе",
+            ),
+        }
+    )
     def post(self, request):
         if 'file' not in request.FILES:
             return Response({"error": "No file uploaded"}, status=400)
