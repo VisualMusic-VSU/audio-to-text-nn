@@ -15,7 +15,7 @@ class TranscribeAudio(APIView):
     @swagger_auto_schema(
         request_body=None,
         manual_parameters=[
-            openapi.Parameter('file', openapi.IN_FORM, description='Аудиофайл для расшировки', type=openapi.TYPE_FILE),
+            openapi.Parameter('file', openapi.IN_FORM, description='Аудио для расшифровки', type=openapi.TYPE_FILE),
         ],
         responses={
             200: openapi.Response(

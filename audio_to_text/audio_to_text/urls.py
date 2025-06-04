@@ -6,9 +6,9 @@ from rest_framework import permissions
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Audio Transcriber API",
+        title="Audio-To-Text API",
         default_version='v1',
-        description="API для расшифровки аудиофайлов",
+        description="API для расшифровки аудио в текст",
         terms_of_service="https://www.google.com/policies/terms/",
     ),
     public=True,
